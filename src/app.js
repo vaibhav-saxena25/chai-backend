@@ -13,4 +13,8 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}));//url se jo bhi data a
 app.use(express.static("public"));//public folder me jo bhi file h usse access krta h
 app.use(cookieParser());//cookie me jo bhi data aata h usse access krta h aur uss pr crud operation perform krta h 
 
+//import routes
+import userRouter from "./routes/user.routes.js";
+//use routes
+app.use("/api/v1/users",userRouter);
 export  { app }
